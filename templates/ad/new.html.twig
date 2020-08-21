@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{# Surcharge du block title #}
+{% block title %}
+  Création d'une annonce
+{% endblock %}
+
+{# fait référence au form_widget d'ajout d'images sur cette même page #}
+{% form_theme form 'ad/_collection.html.twig' %}
+
+{# Surcharge du block body #}
+{% block body %}
+  <div class="container">
+    <h1>
+      Nouvelle annonce
+    </h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_row(form.content) }}
+    <button type="submit" class="btn btn-primary">
+      Créer la nouvelle annonce
+    </button>
+    {{ form_end(form) }}
+  </div>
+{% endblock %}
+
+
+
+{% block javascripts %}
+    <script src="/js/ad.js"></script>
+{% endblock %}
